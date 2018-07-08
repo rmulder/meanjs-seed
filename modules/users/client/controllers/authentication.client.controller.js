@@ -88,8 +88,8 @@
       console.log('onUserSignupSuccess: ', response);
 
       Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Signup successful!' });
-      // And redirect to the user verification page
-      $state.go('verification');
+      // And redirect to the previous or home page
+      $state.go($state.previous.state.name || 'home', $state.previous.params);
     }
 
     function onUserSignupError(response) {
